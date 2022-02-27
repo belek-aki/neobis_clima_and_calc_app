@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neobis_weather_and_calc_app/models/weather.dart';
 
 class WeatherAppBar extends StatelessWidget {
-  const WeatherAppBar({Key? key}) : super(key: key);
+  final Weather weather;
+  const WeatherAppBar({Key? key, required this.weather}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class WeatherAppBar extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Text(
-              'Bishkek',
+              weather.cityName,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,

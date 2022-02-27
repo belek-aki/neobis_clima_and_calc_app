@@ -19,6 +19,10 @@ dependencies:
   flutter_screenutil: ^5.2.0
   math_expressions: ^2.0.0
   flutter_dotenv: ^5.0.2
+  http: ^0.13.3
+  location: ^4.2.0
+  bloc_concurrency: ^0.2.0
+  flutter_bloc: ^8.0.0
 
 dev_dependencies:
   flutter_test:

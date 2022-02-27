@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neobis_weather_and_calc_app/models/weather.dart';
 
 class WeatherCartData extends StatelessWidget {
-  const WeatherCartData({Key? key}) : super(key: key);
+  final Weather weather;
+  const WeatherCartData({Key? key, required this.weather}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class WeatherCartData extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: ScreenUtil().setWidth(17)),
                 child: Text(
-                  'To day: 16 February',
+                  'To day: ${weather.date}',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
@@ -29,7 +31,7 @@ class WeatherCartData extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '-4',
+                    weather.temp,
                     style: TextStyle(
                       fontSize: 100,
                       fontWeight: FontWeight.w400,
@@ -47,7 +49,7 @@ class WeatherCartData extends StatelessWidget {
                 ],
               ),
               Text(
-                'Солнечно',
+                weather.discription,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w700,
@@ -94,7 +96,7 @@ class WeatherCartData extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
                           child: Text(
-                            'Дождь',
+                            'Давление',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w400,
@@ -135,7 +137,7 @@ class WeatherCartData extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
                           child: Text(
-                            '15 km/h',
+                            weather.wind,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w400,
@@ -146,7 +148,7 @@ class WeatherCartData extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
                           child: Text(
-                            '26 %',
+                            weather.rain,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w400,
